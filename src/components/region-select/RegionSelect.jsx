@@ -2,24 +2,20 @@ import { useEffect } from 'react';
 import { REGIONS } from '../../constants/REGIONS';
 import { URLS } from '../../constants/URLS';
 
-const RegionSelect = ({
-	region,
-	setRegion,
-	setUrlToFetch,
-	setSearch,
-	search
-}) => {
+const RegionSelect = ({ region, setRegion, setUrlToFetch }) => {
 	useEffect(() => {
-		if (region === 0) setUrlToFetch(URLS.ALL);
-		else setUrlToFetch(URLS[region.toUpperCase()]);
-	}, [search]);
+		if (region === '0') {
+			return setUrlToFetch(URLS.ALL);
+		} else {
+			return setUrlToFetch(URLS[region.toUpperCase()]);
+		}
+	}, [region]);
 	return (
 		<select
 			name='region'
 			id='region'
 			onChange={e => {
 				setRegion(e.target.value);
-				setSearch(true);
 			}}
 		>
 			<option value={REGIONS.DEFAULT}>All</option>

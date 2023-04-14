@@ -7,36 +7,36 @@ import { useState } from 'react';
 import { URLS } from '../../constants/URLS';
 
 const Home = () => {
-	const [region, setRegion] = useState(0);
+	const [region, setRegion] = useState('0');
 	const [typed, setTyped] = useState('');
-	const { data, setUrlToFetch, search, setSearch } = useFetch(`${URLS.ALL}`);
+	const { data, setUrlToFetch, setData } = useFetch(URLS.ALL);
 
 	return (
 		<div>
 			<div>
-				<TextInput />
+				<TextInput
+					typed={typed}
+					setTyped={setTyped}
+					setData={setData}
+					data={data}
+				/>
 				<RegionSelect
 					region={region}
 					setRegion={setRegion}
 					setUrlToFetch={setUrlToFetch}
-					setSearch={setSearch}
-					search={search}
 				/>
 			</div>
-			{!search ? (
-				data.map(element => (
-					<CardItem
-						key={v4()}
-						img={element.flags.png}
-						name={element.name.common}
-						population={element.population}
-						region={element.region}
-						capital={element.capital}
-					/>
-				))
-			) : (
-				<h1>Loading</h1>
-			)}
+
+			{data.map(element => (
+				<CardItem
+					key={v4()}
+					img={element.flags.png}
+					name={element.name.common}
+					population={element.population}
+					region={element.region}
+					capital={element.capital}
+				/>
+			))}
 		</div>
 	);
 };

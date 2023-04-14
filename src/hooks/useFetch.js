@@ -1,20 +1,19 @@
 import { useEffect, useState } from 'react';
 
 export const useFetch = url => {
-	const [urlToFetch, setUrlToFetch] = useState(url);
 	const [data, setData] = useState([]);
 	const [search, setSearch] = useState(true);
+	const [urlToFetch, setUrlToFetch] = useState(url);
+	const [allData, setAllData] = useState([]);
 	useEffect(() => {
-		fetchData(urlToFetch, setData, setSearch, search);
+		fetchData(urlToFetch, setData);
 	}, [urlToFetch]);
-
-	return { data, setUrlToFetch, search, setSearch };
+	console.log(urlToFetch);
+	return { data, setUrlToFetch, setData, allData, setAllData };
 };
 
-const fetchData = async (url, setData, setSearch, search) => {
-	const request = await fetch(url);
+const fetchData = async (urlToFetch, setData) => {
+	const request = await fetch(urlToFetch);
 	const data = await request.json();
 	setData(data);
-	console.log(data);
-	setSearch(!search);
 };

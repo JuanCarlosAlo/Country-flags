@@ -1,6 +1,7 @@
 import { REGIONS } from './REGIONS';
 
 const BASE = 'https://restcountries.com/v3.1/';
+
 export const URLS = {
 	ALL: `${BASE}all`,
 	AFRICA: `${BASE}region/${REGIONS.AFRICA}`,

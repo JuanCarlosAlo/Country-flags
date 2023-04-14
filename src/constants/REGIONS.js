@@ -4,5 +4,5 @@ export const REGIONS = {
 	ASIA: 'asia',
 	EUROPE: 'europe',
 	OCEANIA: 'oceania',
-	DEFAULT: 0
+	DEFAULT: '0'
 };
