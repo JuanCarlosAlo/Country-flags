@@ -1,9 +1,11 @@
-const CardItem = ({ img, name, population }) => {
+const CardItem = ({ img, name, population, region, capital }) => {
 	return (
 		<div>
 			<img src={img} alt='' />
 			<p>{name}</p>
-			<p>{population}</p>
+			<p>Population: {population}</p>
+			<p>Region: {region}</p>
+			<p>Capital: {capital}</p>
 		</div>
 	);
 };

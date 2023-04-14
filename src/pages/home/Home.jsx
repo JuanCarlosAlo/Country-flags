@@ -1,34 +1,42 @@
+import { v4 } from 'uuid';
 import CardItem from '../../components/card-item/CardItem';
 import { useFetch } from '../../hooks/useFetch';
+import TextInput from '../../components/text-input/TextInput';
+import RegionSelect from '../../components/region-select/RegionSelect';
+import { useState } from 'react';
+import { URLS } from '../../constants/URLS';
 
 const Home = () => {
-	const { data, country, setCountry } = useFetch(
-		'https://restcountries.com/v3.1/all'
-	);
+	const [region, setRegion] = useState(0);
+	const [typed, setTyped] = useState('');
+	const { data, setUrlToFetch, search, setSearch } = useFetch(`${URLS.ALL}`);
 
-	console.log(data);
 	return (
 		<div>
-			<header>
-				<h1>Where in the world?</h1>
-			</header>
 			<div>
-				<input type='text' />
-				<select name='region' id='region'>
-					<option value='africa'>Africa</option>
-					<option value='america'>America</option>
-					<option value='asia'>Asia</option>
-					<option value='europe'>Europe</option>
-					<option value='oceania'>Oceania</option>
-				</select>
-			</div>
-			{data.map(element => (
-				<CardItem
-					img={element.flags.png}
-					name={element.name.common}
-					population={element.population}
+				<TextInput />
+				<RegionSelect
+					region={region}
+					setRegion={setRegion}
+					setUrlToFetch={setUrlToFetch}
+					setSearch={setSearch}
+					search={search}
 				/>
-			))}
+			</div>
+			{!search ? (
+				data.map(element => (
+					<CardItem
+						key={v4()}
+						img={element.flags.png}
+						name={element.name.common}
+						population={element.population}
+						region={element.region}
+						capital={element.capital}
+					/>
+				))
+			) : (
+				<h1>Loading</h1>
+			)}
 		</div>
 	);
 };
