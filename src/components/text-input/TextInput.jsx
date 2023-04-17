@@ -7,12 +7,18 @@ const TextInput = ({ typed, setTyped, setUrlToFetch, region }) => {
 		if (typed === '') {
 			return setUrlToFetch(URLS[region.toUpperCase()]);
 		} else {
-			setUrlToFetch(URLS.COUNTRIE + typed);
+			setUrlToFetch(URLS.TYPED + typed);
 		}
 	}, [typed]);
 	return (
 		<StyledInputText
-			onChange={e => setTyped(e.target.value)}
+			onChange={e => {
+				if (e.target.value !== ' ') {
+					setTyped(e.target.value);
+				} else {
+					return;
+				}
+			}}
 			type='text'
 			placeholder='Search for a country…'
 		/>
