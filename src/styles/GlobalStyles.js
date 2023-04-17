@@ -24,11 +24,10 @@ img{
 body {
 	font-family: 'League Spartan', sans-serif;
 	background-color: ${COLORS.main};
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0;
 	overflow-x: hidden;
 	
-	height: 100vh;
+	
 }
 `;
 

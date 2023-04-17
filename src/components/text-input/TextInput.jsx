@@ -1,20 +1,22 @@
 import { useEffect } from 'react';
+import { URLS } from '../../constants/URLS';
+import { StyledInputText } from './styles';
 
-const TextInput = ({ typed, setTyped, setData, data }) => {
+const TextInput = ({ typed, setTyped, setUrlToFetch, region }) => {
 	useEffect(() => {
 		if (typed === '') {
-			return setData(data);
+			return setUrlToFetch(URLS[region.toUpperCase()]);
 		} else {
-			setData(filterCountry([...data], typed));
+			setUrlToFetch(URLS.COUNTRIE + typed);
 		}
 	}, [typed]);
-	return <input onChange={e => setTyped(e.target.value)} type='text' />;
-};
-const filterCountry = (arr, searchKey) => {
-	return arr.filter(obj =>
-		Object.keys(obj.name).some(key =>
-			obj.name.common.toLowerCase().includes(searchKey)
-		)
+	return (
+		<StyledInputText
+			onChange={e => setTyped(e.target.value)}
+			type='text'
+			placeholder='Search for a country…'
+		/>
 	);
 };
+
 export default TextInput;

@@ -1,8 +1,10 @@
+import { StyledHeader, StyledTitle } from './styles';
+
 const Header = () => {
 	return (
-		<header>
-			<h1>Where in the world?</h1>
-		</header>
+		<StyledHeader>
+			<StyledTitle>Where in the world?</StyledTitle>
+		</StyledHeader>
 	);
 };
 

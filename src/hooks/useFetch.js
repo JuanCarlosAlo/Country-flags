@@ -8,7 +8,7 @@ export const useFetch = url => {
 	useEffect(() => {
 		fetchData(urlToFetch, setData);
 	}, [urlToFetch]);
-	console.log(urlToFetch);
+	console.log(data);
 	return { data, setUrlToFetch, setData, allData, setAllData };
 };
 

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { REGIONS } from '../../constants/REGIONS';
 import { URLS } from '../../constants/URLS';
+import { StyledOption, StyledSelect } from './styles';
 
 const RegionSelect = ({ region, setRegion, setUrlToFetch }) => {
 	useEffect(() => {
@@ -11,20 +12,20 @@ const RegionSelect = ({ region, setRegion, setUrlToFetch }) => {
 		}
 	}, [region]);
 	return (
-		<select
+		<StyledSelect
 			name='region'
 			id='region'
 			onChange={e => {
 				setRegion(e.target.value);
 			}}
 		>
-			<option value={REGIONS.DEFAULT}>All</option>
-			<option value={REGIONS.AFRICA}>Africa</option>
-			<option value={REGIONS.AMERICA}>America</option>
-			<option value={REGIONS.ASIA}>Asia</option>
-			<option value={REGIONS.EUROPE}>Europe</option>
-			<option value={REGIONS.OCEANIA}>Oceania</option>
-		</select>
+			<StyledOption value={REGIONS.DEFAULT}>All</StyledOption>
+			<StyledOption value={REGIONS.AFRICA}>Africa</StyledOption>
+			<StyledOption value={REGIONS.AMERICA}>America</StyledOption>
+			<StyledOption value={REGIONS.ASIA}>Asia</StyledOption>
+			<StyledOption value={REGIONS.EUROPE}>Europe</StyledOption>
+			<StyledOption value={REGIONS.OCEANIA}>Oceania</StyledOption>
+		</StyledSelect>
 	);
 };
 

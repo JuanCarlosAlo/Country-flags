@@ -8,5 +8,6 @@ export const URLS = {
 	ASIA: `${BASE}region/${REGIONS.ASIA}`,
 	AMERICA: `${BASE}region/${REGIONS.AMERICA}`,
 	EUROPE: `${BASE}region/${REGIONS.EUROPE}`,
-	OCEANIA: `${BASE}region/${REGIONS.OCEANIA}`
+	OCEANIA: `${BASE}region/${REGIONS.OCEANIA}`,
+	COUNTRIE: `${BASE}alpha/`
 };
