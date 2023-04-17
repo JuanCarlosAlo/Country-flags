@@ -7,7 +7,13 @@ import BorderCountry from '../../components/border-country/BorderCountry';
 import {
 	StyledBackButton,
 	StyledBorderContainer,
-	StyledDetailsPage
+	StyledCountryName,
+	StyledDetailsPage,
+	StyledImg,
+	StyledInfo,
+	StyledInfoColumns,
+	StyledInfoSpan,
+	StyledInfoTittle
 } from './styles';
 
 const Details = () => {
@@ -34,51 +40,64 @@ const Details = () => {
 		return (
 			<StyledDetailsPage>
 				<StyledBackButton onClick={() => navigate('/')}>Back</StyledBackButton>
-				<img src={dataCountrie.flags.png} alt='' />
-				<p>{dataCountrie.name.common}</p>
-				<p>
-					Native Name: <span>{nativeName[0].common}</span>
-				</p>
-				<p>
-					Population: <span>{dataCountrie.population}</span>
-				</p>
-				<p>
-					Region: <span>{dataCountrie.region}</span>
-				</p>
-				<p>
-					Sub Region: <span>{dataCountrie.subregion}</span>
-				</p>
-				<p>
-					Capital: <span>{dataCountrie.capital}</span>
-				</p>
-				<p>
-					Top Level Domain:{' '}
-					{tld.map(element => (
-						<span key={v4()}>{element}</span>
-					))}
-				</p>
-				<p>
-					Currencies:{' '}
-					{currencies.map(element => (
-						<span key={v4()}>{element.name}</span>
-					))}
-				</p>
+				<StyledImg src={dataCountrie.flags.png} alt='' />
+				<StyledInfo>
+					<StyledInfoColumns>
+						<div>
+							<StyledCountryName>{dataCountrie.name.common}</StyledCountryName>
+							<StyledInfoTittle>
+								Native Name:{' '}
+								<StyledInfoSpan>{nativeName[0].common}</StyledInfoSpan>
+							</StyledInfoTittle>
+							<StyledInfoTittle>
+								Population:{' '}
+								<StyledInfoSpan>
+									{dataCountrie.population.toLocaleString('es-ES')}
+								</StyledInfoSpan>
+							</StyledInfoTittle>
+							<StyledInfoTittle>
+								Region: <StyledInfoSpan>{dataCountrie.region}</StyledInfoSpan>
+							</StyledInfoTittle>
+							<StyledInfoTittle>
+								Sub Region:{' '}
+								<StyledInfoSpan>{dataCountrie.subregion}</StyledInfoSpan>
+							</StyledInfoTittle>
+							<StyledInfoTittle>
+								Capital: <StyledInfoSpan>{dataCountrie.capital}</StyledInfoSpan>
+							</StyledInfoTittle>
+						</div>
 
-				<p>
-					Currencies:{' '}
-					{languages.map(element => (
-						<span key={v4()}>{element}</span>
-					))}
-				</p>
+						<div>
+							<StyledInfoTittle>
+								Top Level Domain:{' '}
+								{tld.map(element => (
+									<StyledInfoSpan key={v4()}>{element}</StyledInfoSpan>
+								))}
+							</StyledInfoTittle>
+							<StyledInfoTittle>
+								Currencies:{' '}
+								{currencies.map(element => (
+									<StyledInfoSpan key={v4()}>{element.name}</StyledInfoSpan>
+								))}
+							</StyledInfoTittle>
 
-				<p>Borders Countries: </p>
-				<StyledBorderContainer>
-					{!borders
-						? 'none'
-						: borders.map(element => (
-								<BorderCountry key={v4()} cca3={element} />
-						  ))}
-				</StyledBorderContainer>
+							<StyledInfoTittle>
+								Currencies:{' '}
+								{languages.map(element => (
+									<StyledInfoSpan key={v4()}>{element}</StyledInfoSpan>
+								))}
+							</StyledInfoTittle>
+						</div>
+					</StyledInfoColumns>
+					<StyledInfoTittle>Borders Countries: </StyledInfoTittle>
+					<StyledBorderContainer>
+						{!borders
+							? 'none'
+							: borders.map(element => (
+									<BorderCountry key={v4()} cca3={element} />
+							  ))}
+					</StyledBorderContainer>
+				</StyledInfo>
 			</StyledDetailsPage>
 		);
 	}

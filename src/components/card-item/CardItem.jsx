@@ -1,16 +1,30 @@
 import { useNavigate } from 'react-router-dom';
-import { StyledCard, StyledInfoContainer } from './styles';
+import {
+	StyledCard,
+	StyledCountryName,
+	StyledImg,
+	StyledInfoContainer,
+	StyledSpan,
+	StyledSpecTitle
+} from './styles';
 
 const CardItem = ({ img, name, population, region, capital, cca3 }) => {
 	const navigate = useNavigate();
 	return (
 		<StyledCard onClick={e => navigate(`/country/${cca3}`)}>
-			<img src={img} alt='' />
+			<StyledImg src={img} alt='' />
 			<StyledInfoContainer>
-				<p>{name}</p>
-				<p>Population: {population}</p>
-				<p>Region: {region}</p>
-				<p>Capital: {capital}</p>
+				<StyledCountryName>{name}</StyledCountryName>
+				<StyledSpecTitle>
+					Population:{' '}
+					<StyledSpan>{population.toLocaleString('es-ES')}</StyledSpan>
+				</StyledSpecTitle>
+				<StyledSpecTitle>
+					Region: <StyledSpan>{region}</StyledSpan>
+				</StyledSpecTitle>
+				<StyledSpecTitle>
+					Capital: <StyledSpan>{capital}</StyledSpan>
+				</StyledSpecTitle>
 			</StyledInfoContainer>
 		</StyledCard>
 	);

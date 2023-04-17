@@ -14,6 +14,13 @@ const StyledInputContainer = styled.div`
 	align-items: flex-start;
 	gap: 2rem;
 	margin-bottom: 2rem;
+	@media screen and (min-width: 768px) {
+		flex-direction: row;
+		width: 100%;
+		padding-left: 5rem;
+		padding-right: 5rem;
+		justify-content: space-between;
+	}
 `;
 
 const StyledCardContainer = styled.div`

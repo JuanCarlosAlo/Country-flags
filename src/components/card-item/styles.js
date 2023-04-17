@@ -13,4 +13,29 @@ const StyledInfoContainer = styled.div`
 	padding-bottom: 2rem;
 `;
 
-export { StyledCard, StyledInfoContainer };
+const StyledCountryName = styled.p`
+	font-size: 1.125rem;
+	font-weight: bolder;
+`;
+const StyledSpecTitle = styled.p`
+	font-weight: bolder;
+`;
+
+const StyledSpan = styled.span`
+	font-weight: 500;
+`;
+
+const StyledImg = styled.img`
+	height: 160px;
+	width: 100%;
+	object-fit: cover;
+`;
+
+export {
+	StyledCard,
+	StyledInfoContainer,
+	StyledCountryName,
+	StyledSpecTitle,
+	StyledSpan,
+	StyledImg
+};
