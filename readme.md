@@ -1,10 +1,10 @@
 # Info of the world (React)
 
-![Imagen del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/Planet-Express/main/public/assets/readme-3.jpg)
+![Imagen del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/Country-flags/main/public/readme-1.jpg)
 
 ## Ejemplo en vivo
 
-- [Live Demo](https://planet-express.onrender.com/)
+- [Live Demo]() (not working)
 
 ## Descripción
 
@@ -12,7 +12,7 @@ Info of the world es una aplicacion con informacion de todos los paises del mund
 
 ## ¿Qué he aprendido en este proyecto?
 
-En este proyecto aprendi a usar react router y pasara props desde el router a una unica page con informacion de un JSON externo escrito por mi para porder imprimr la informacion dependiendo del planeta escogido, ademas de usar un diseño responsive para movil, tablet y desktop con Styled-components.
+En este proyecto es el mismo hecho con js, pero esta vez hecho con React. Aprendi a usar react-router con layout pero con el añadido de realizar fetch con la informacion que se imprime a la API externa. Aprendi a hacer un hook para el fetch y componentizar cada elemento necesario.
 
 ## Tecnologías
 
@@ -31,15 +31,15 @@ Si quieres echar un vistazo al proyecto, te recomiendo:
 
 ## Ordenador
 
-![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/Planet-Express/main/public/assets/readme-3.jpg)
+![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/Country-flags/main/public/readme-1.jpg)
 
-## Estados activos y movil
+## Estados activos
 
-![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/Planet-Express/main/public/assets/readme-2.jpg)
+![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/Country-flags/main/public/readme-2.jpg)
 
 ## Parte de Codigo
 
-![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/Planet-Express/main/public/assets/readme-1.jpg)
+![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/Country-flags/main/public/readme-4.jpg)
 
 ## Autor
 
