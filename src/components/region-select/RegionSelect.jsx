@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { REGIONS } from '../../constants/REGIONS';
-import { URLS } from '../../constants/URLS';
+import { REGIONS } from '../../constants/regions';
+import { URLS } from '../../constants/urls';
 import { StyledOption, StyledSelect } from './styles';
 
 const RegionSelect = ({ region, setRegion, setUrlToFetch }) => {

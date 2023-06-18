@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { URLS } from '../../constants/URLS';
+import { URLS } from '../../constants/urls';
 import { useFetch } from '../../hooks/useFetch';
 import { v4 } from 'uuid';
 import BorderCountry from '../../components/border-country/BorderCountry';

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { URLS } from '../../constants/URLS';
+import { URLS } from '../../constants/urls';
 import { StyledInputText } from './styles';
 
 const TextInput = ({ typed, setTyped, setUrlToFetch, region }) => {

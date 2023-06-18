@@ -1,4 +1,4 @@
-import { REGIONS } from './REGIONS';
+import { REGIONS } from './regions';
 
 const BASE = 'https://restcountries.com/v3.1/';
 
