@@ -2,7 +2,7 @@ import { v4 } from 'uuid';
 import CardItem from '../../components/card-item/CardItem';
 import { useFetch } from '../../hooks/useFetch';
 import TextInput from '../../components/text-input/TextInput';
-import RegionSelect from '../../components/region-select/regionselect';
+import RegionSelect from '../../components/region-select/RegionSelect';
 import { useState } from 'react';
 import { URLS } from '../../constants/urls';
 import {
